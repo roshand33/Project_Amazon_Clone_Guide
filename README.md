@@ -238,20 +238,20 @@ pipeline{
                 script{
                    withDockerRegistry(credentialsId: 'docker', toolName: 'docker'){   
                        sh "docker build -t amazon-clone ."
-                       sh "docker tag amazon-clone <YOUR-DOCKER-USERNAME>/amazon-clone:latest"
-                       sh "docker push <YOUR-DOCKER-USERNAME>/amazon-clone:latest"
+                       sh "docker tag amazon-clone roshand22/amazon-clone:latest"
+                       sh "docker push roshand22/amazon-clone:latest"
                     }
                 }
             }
         }
         stage("TRIVY"){
             steps{
-                sh "trivy image <YOUR-DOCKER-USERNAME>/amazon-clone:latest > trivyimage.txt"
+                sh "trivy image roshand22/amazon-clone:latest > trivyimage.txt"
             }
         }
         stage('Deploy to container'){
             steps{
-                sh 'docker run -d --name amazon-clone -p 3000:3000 <YOUR-DOCKER-USERNAME>/amazon-clone:latest'
+                sh 'docker run -d --name amazon-clone -p 3000:3000 roshand22/amazon-clone:latest'
             }
         }
     }
