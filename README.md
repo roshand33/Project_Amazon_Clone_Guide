@@ -19,10 +19,12 @@ Follow the steps exactly — skipping steps will break the pipeline.
 # 📌 1. Install Required Tools (Ubuntu)
 
 ### Install AWS CLI
-```bash
-sudo apt update
-sudo apt install awscli -y
-```
+````
+sudo apt install unzip -y
+curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
+unzip awscliv2.zip
+sudo ./aws/install
+````
 
 ### Install Terraform
 ```bash
