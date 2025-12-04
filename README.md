@@ -76,7 +76,7 @@ region = "ap-south-1"
 ### main.tf
 Update:
 - ami
-- instance_type (ex: t2.micro, t3.medium)
+- instance_type (ex: t2.large t3.large)
 
 ---
 
