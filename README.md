@@ -87,6 +87,16 @@ terraform validate
 terraform plan
 terraform apply --auto-approve
 ```
+This creates:
+- Jenkins EC2 Server
+- Security Groups
+- Required networking
+
+---
+
+
+# 📌 6. Login to Jenkins Server
+
 ### Configuring Jenkins server
 ````
 sudo apt update
@@ -99,16 +109,6 @@ echo "deb [signed-by=/etc/apt/keyrings/jenkins-keyring.asc]" \
 sudo apt-get update
 sudo apt-get install jenkins -y
 ````
-
-This creates:
-- Jenkins EC2 Server
-- Security Groups
-- Required networking
-
----
-
-
-# 📌 6. Login to Jenkins Server
 
 Get EC2 Public IP → open browser:
 ```
